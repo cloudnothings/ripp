@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-
+import getTicketList from './store/api/getTicketList';
 function App() {
+  const filter = {"filter":{"queueNames":"Help Desk","excludeCompleted":1,"account":"","contactName":"","issueTypeNames":""}}
+  console.log(getTicketList(filter))
   return (
     <div className="App">
       <header className="App-header">
