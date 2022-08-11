@@ -1,16 +1,15 @@
 import axios from 'axios'
-import getPyKey from './getPyKey'
 
 const getTicketList = async (filter) => {
-  const axiosParam = {
+  const getTicketListResult = await axios({
     method: 'post',
+    baseURL: window.location.origin,
     url: '/api/GetTicketList',
     headers: {
       'Content-Type': 'application/json',
     },
     data: filter,
-  }
-  const getTicketListResult = await axios(axiosParam)
+  })
   return getTicketListResult.data.result
 }
 
